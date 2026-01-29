@@ -279,3 +279,136 @@ The selection below documents the digital, analog, and serial joins used by the 
 devjson:1 {"deviceKey":"dsp1", "methodName":"SetDebugLevels", "params":[2]}
 devjson:1 {"deviceKey":"dsp1", "methodName":"ResetDebugLevels", "params":[]}
 ```
+<!-- START Minimum Essentials Framework Versions -->
+### Minimum Essentials Framework Versions
+
+- 1.13.4
+<!-- END Minimum Essentials Framework Versions -->
+<!-- START Config Example -->
+### Config Example
+
+```json
+{
+    "key": "GeneratedKey",
+    "uid": 1,
+    "name": "GeneratedName",
+    "type": "convergepro2dsp",
+    "group": "Group",
+    "properties": {
+        "blockName": "SampleString",
+        "levelParameter": "SampleString",
+        "muteParameter": "SampleString",
+        "disabled": true,
+        "hasLevel": true,
+        "hasMute": true,
+        "isMic": true,
+        "useAbsoluteValue": true,
+        "unmuteOnVolChange": true
+    }
+}
+```
+<!-- END Config Example -->
+<!-- START Supported Types -->
+### Supported Types
+
+- convergepro2dsp
+<!-- END Supported Types -->
+<!-- START Join Maps -->
+
+<!-- END Join Maps -->
+<!-- START Interfaces Implemented -->
+### Interfaces Implemented
+
+- IHasDialer
+- IKeyed
+- IBasicVolumeWithFeedback
+<!-- END Interfaces Implemented -->
+<!-- START Base Classes -->
+### Base Classes
+
+- JoinMapBaseAdvanced
+- EssentialsBridgeableDevice
+- ConvergePro2BaseConfigProperties
+- DspControlPoint
+- ConvergePro2DspControlPoint
+<!-- END Base Classes -->
+<!-- START Public Methods -->
+### Public Methods
+
+- public void CreateDspObjects()
+- public void SendText(string s)
+- public void RunPreset(ushort preset)
+- public void RunPreset(ConvergePro2DspPresetConfig presetConfig)
+- public void RunPresetByString(string preset)
+- public void ResetDebugLevels()
+- public void SetDebugLevels(uint level)
+- public void EmulateIncomingCall(string channelName)
+- public void Initialize(string key, ConvergePro2DspDialerConfig config)
+- public void StateChangeHandler(string[] responses)
+- public void IndicationHandler(string[] responses)
+- public void ActivePartiesHandler(string[] responses)
+- public void IncomingCallHandler(string[] responses)
+- public void OnCallStatusChange(CodecCallStatusItemChangeEventArgs args)
+- public void ParseResponse(string parameterName, string[] values)
+- public void Poll()
+- public void SubscribeToNotifications()
+- public void DoNotDisturbToggle()
+- public void DoNotDisturbOn()
+- public void DoNotDisturbOff()
+- public void AutoAnswerToggle()
+- public void AutoAnswerOn()
+- public void AutoAnswerOff()
+- public void Dial()
+- public void Dial(string number)
+- public void Redial()
+- public void EndCall(CodecActiveCallItem item)
+- public void EndAllCalls()
+- public void AcceptCall()
+- public void AcceptCall(CodecActiveCallItem item)
+- public void RejectCall()
+- public void RejectCall(CodecActiveCallItem item)
+- public void SetHookState(bool state)
+- public void SetHookState(uint state)
+- public void HookFlash()
+- public void GetHookState()
+- public void SendDtmf(string digit)
+- public void SendKeypad(EKeypadKeys button)
+- public void Initialize(string key, ConvergePro2DspLevelControlBlockConfig config)
+- public void ParseResponse(string command, string[] values)
+- public void SendText(string parameterName, string value)
+- public void GetCurrentMinMax()
+- public void GetCurrentMin()
+- public void GetCurrentMax()
+- public void GetCurrentGain()
+- public void GetCurrentMute()
+- public void MuteOff()
+- public void MuteOn()
+- public void MuteToggle()
+- public void SetVolume(ushort level)
+- public void VolumeDown(bool press)
+- public void VolumeUp(bool press)
+<!-- END Public Methods -->
+<!-- START Bool Feedbacks -->
+### Bool Feedbacks
+
+- IsOnlineFeedback
+- OffHookFeedback
+- AutoAnswerFeedback
+- DoNotDisturbFeedback
+- IncomingCallFeedback
+- MuteFeedback
+<!-- END Bool Feedbacks -->
+<!-- START Int Feedbacks -->
+### Int Feedbacks
+
+- CommMonitorFeedback
+- SocketStatusFeedback
+- VolumeLevelFeedback
+<!-- END Int Feedbacks -->
+<!-- START String Feedbacks -->
+### String Feedbacks
+
+- LocalNumberFeedback
+- DialStringFeedback
+- CallerIdNumberFeedback
+<!-- END String Feedbacks -->
